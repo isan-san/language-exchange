@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     apple: [],
     shortcut: [],
   },
-  generator: "v0.dev",
 }
 
 export default function RootLayout({
