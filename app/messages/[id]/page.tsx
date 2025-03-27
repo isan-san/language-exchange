@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { MessageList } from "@/components/message-list"
 import { MessageThread } from "@/components/message-thread"
 import { useMessages } from "@/components/message-context"
@@ -12,7 +12,7 @@ export default function MessagePage({ params }: { params: { id: string } }) {
   const [isLoading, setIsLoading] = useState(true)
   const [showConversation, setShowConversation] = useState(false)
   const isMobile = useMediaQuery("(max-width: 768px)")
-  const id = params.id
+  const { id } = React.use(params)
 
   // Set the active conversation ID when the page loads
   useEffect(() => {
