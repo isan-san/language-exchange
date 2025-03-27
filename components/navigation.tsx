@@ -35,7 +35,8 @@ export function Navigation() {
       <div className="container flex h-14 sm:h-16 items-center justify-between">
         <div className="flex items-center gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold text-xl">Language Exchange</span>
+            {/* Always show the title on mobile and desktop */}
+            <span className="font-bold text-lg md:text-xl">Language Exchange</span>
           </Link>
           <nav className="hidden md:flex gap-6">
             {routes.map((route) => (
@@ -58,8 +59,8 @@ export function Navigation() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="h-8 w-8">
+                <Menu className="h-4 w-4" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
@@ -85,7 +86,7 @@ export function Navigation() {
                       onClick={() => setOpen(false)}
                     >
                       <Link href={route.href}>
-                        <route.icon className="mr-2 h-5 w-5" />
+                        <route.icon className="mr-2 h-4 w-4" />
                         {route.label}
                       </Link>
                     </Button>
